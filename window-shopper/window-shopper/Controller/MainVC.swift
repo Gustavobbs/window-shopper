@@ -14,6 +14,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var wageTxt: CurrencyTxtField!
     @IBOutlet weak var priceTxt: CurrencyTxtField!
     
+    @IBOutlet weak var hoursLbl: UILabel!
+    @IBOutlet weak var hoursLblTxt: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +29,27 @@ class MainVC: UIViewController {
         // inputAccessoryView allows to append an acessory (on numeric keyboard in this case)
         wageTxt.inputAccessoryView = calcBtn
         priceTxt.inputAccessoryView = calcBtn
+        
+        hoursLbl.isHidden = true
+        hoursLblTxt.isHidden = true
     }
     
     @objc func calculate() {
-        
+        if let wageTxt = wageTxt.text, let priceText = priceTxt.text {
+            if let wage = Double(wageTxt), let price = Double(priceText) {
+                view.endEditing(true)
+                hoursLbl.isHidden = false
+                hoursLblTxt.isHidden = false
+                hoursLbl.text = "\(Wage.getHours(forWage: wage, andPrice: price))"
+            }
+        }
     }
 
-
+    @IBAction func clearPressed(_ sender: Any) {
+        hoursLbl.isHidden = true
+        hoursLblTxt.isHidden = true
+        wageTxt.text = ""
+        priceTxt.text = ""
+    }
 }
 

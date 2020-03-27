@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="width" constant="90" id="qk7-7B-1ce"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your houry wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgm-4b-SiA" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your houry wage" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgm-4b-SiA" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
                                 <rect key="frame" x="57.5" y="240" width="260" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IBM-b9-fnp"/>
@@ -35,7 +35,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uk4-IM-D8K" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item price" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uk4-IM-D8K" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
                                 <rect key="frame" x="57.5" y="306" width="260" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Da1-Hl-1aJ"/>
@@ -44,6 +44,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqn-u5-7Ea">
+                                <rect key="frame" x="57" y="376" width="261" height="61.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="45"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-SY-CSS">
+                                <rect key="frame" x="165" y="442.5" width="45" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0p-ek-hja">
+                                <rect key="frame" x="20" y="607" width="335" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="0.25" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IUc-Jd-mM8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -51,13 +74,23 @@
                             <constraint firstItem="Mo0-Uu-0o1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="HTP-qh-LwU"/>
                             <constraint firstItem="hgm-4b-SiA" firstAttribute="top" secondItem="Mo0-Uu-0o1" secondAttribute="bottom" constant="90" id="KRE-p0-en6"/>
                             <constraint firstItem="uk4-IM-D8K" firstAttribute="top" secondItem="hgm-4b-SiA" secondAttribute="bottom" constant="26" id="MHA-yz-tdk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k0p-ek-hja" secondAttribute="trailing" constant="20" id="N0R-xh-PbJ"/>
                             <constraint firstItem="hgm-4b-SiA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PkY-1A-ttI"/>
                             <constraint firstItem="uk4-IM-D8K" firstAttribute="centerX" secondItem="hgm-4b-SiA" secondAttribute="centerX" id="UGd-Pj-128"/>
+                            <constraint firstItem="Mqn-u5-7Ea" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VR2-hf-UXq"/>
+                            <constraint firstItem="cyR-SY-CSS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wzc-uk-bvg"/>
+                            <constraint firstItem="Mqn-u5-7Ea" firstAttribute="width" secondItem="uk4-IM-D8K" secondAttribute="width" multiplier="1.00385" id="ZaC-TK-dQt"/>
+                            <constraint firstItem="Mqn-u5-7Ea" firstAttribute="top" secondItem="uk4-IM-D8K" secondAttribute="bottom" constant="30" id="ZqY-tf-hx2"/>
+                            <constraint firstItem="cyR-SY-CSS" firstAttribute="top" secondItem="Mqn-u5-7Ea" secondAttribute="bottom" constant="5" id="bbD-38-p3k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k0p-ek-hja" secondAttribute="bottom" constant="20" id="beT-YT-6sS"/>
+                            <constraint firstItem="k0p-ek-hja" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mRM-e6-dQp"/>
                             <constraint firstItem="Mo0-Uu-0o1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vdb-35-eSP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="hoursLbl" destination="Mqn-u5-7Ea" id="JGp-8b-cI2"/>
+                        <outlet property="hoursLblTxt" destination="cyR-SY-CSS" id="oE2-Mo-ZCm"/>
                         <outlet property="priceTxt" destination="uk4-IM-D8K" id="eaE-P5-3We"/>
                         <outlet property="wageTxt" destination="hgm-4b-SiA" id="9Ti-wx-LzJ"/>
                     </connections>
