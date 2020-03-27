@@ -7,16 +7,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperBG" translatesAutoresizingMaskIntoConstraints="NO" id="EOv-j9-uDh">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="windowShopperBG" translatesAutoresizingMaskIntoConstraints="NO" id="EOv-j9-uDh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="windowShopperIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-Uu-0o1">
                                 <rect key="frame" x="142.5" y="60" width="90" height="90"/>
@@ -25,29 +26,41 @@
                                     <constraint firstAttribute="width" constant="90" id="qk7-7B-1ce"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgm-4b-SiA" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Your houry wage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgm-4b-SiA" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
                                 <rect key="frame" x="57.5" y="240" width="260" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="IBM-b9-fnp"/>
                                     <constraint firstAttribute="width" constant="260" id="VCe-Db-3tM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uk4-IM-D8K" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="57.5" y="306" width="260" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Da1-Hl-1aJ"/>
+                                    <constraint firstAttribute="width" constant="260" id="sNE-FG-QOV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="uk4-IM-D8K" firstAttribute="width" secondItem="hgm-4b-SiA" secondAttribute="height" multiplier="13:2" id="8AV-5t-Mm8"/>
                             <constraint firstItem="Mo0-Uu-0o1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="HTP-qh-LwU"/>
                             <constraint firstItem="hgm-4b-SiA" firstAttribute="top" secondItem="Mo0-Uu-0o1" secondAttribute="bottom" constant="90" id="KRE-p0-en6"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EOv-j9-uDh" secondAttribute="bottom" id="Oft-HP-o4S"/>
+                            <constraint firstItem="uk4-IM-D8K" firstAttribute="top" secondItem="hgm-4b-SiA" secondAttribute="bottom" constant="26" id="MHA-yz-tdk"/>
                             <constraint firstItem="hgm-4b-SiA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PkY-1A-ttI"/>
-                            <constraint firstItem="EOv-j9-uDh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="roh-N7-XDF"/>
-                            <constraint firstItem="EOv-j9-uDh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tnY-gM-T1W"/>
+                            <constraint firstItem="uk4-IM-D8K" firstAttribute="centerX" secondItem="hgm-4b-SiA" secondAttribute="centerX" id="UGd-Pj-128"/>
                             <constraint firstItem="Mo0-Uu-0o1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vdb-35-eSP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EOv-j9-uDh" secondAttribute="trailing" id="wMV-B7-FXv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="uk4-IM-D8K" id="eaE-P5-3We"/>
+                        <outlet property="wageTxt" destination="hgm-4b-SiA" id="9Ti-wx-LzJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
